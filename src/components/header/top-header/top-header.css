@@ -1,0 +1,62 @@
+.topHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.topHeader__logo {
+  width: 25%;
+}
+
+.topHeader__search {
+  width: 30%;
+}
+
+.topHeader__search input {
+  border: 1px solid silver;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: black;
+  outline: none;
+}
+
+.topHeader__search button {
+  padding: 7px;
+  margin-left: 3px;
+}
+
+.topHeader__cart {
+  width: 15%;
+}
+
+.topHeader__cart button {
+  padding: 7px 50px;
+}
+
+.topHeaderBtn {
+  border: 1px solid #2962ff;
+  border-radius: 15px;
+  background: #2962ff;
+  font-size: 1.5rem;
+  color: white;
+  outline: none;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.topHeaderBtn:hover {
+  background: #42a5f5;
+}
+/*# sourceMappingURL=top-header.css.map */

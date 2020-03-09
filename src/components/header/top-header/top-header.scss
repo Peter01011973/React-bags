@@ -1,0 +1,45 @@
+.topHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;   
+    &__logo {
+        width: 25%;
+    }
+    &__search {
+        width: 30%;
+        input {
+            border: 1px solid silver;
+            padding: 7px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            color: black;
+            outline: none;
+        }
+        button {
+            padding: 7px;
+            margin-left: 3px;
+        }
+    }
+    &__cart {
+        width: 15%;
+        button {
+            padding: 7px 50px;
+
+        }
+    }
+}
+
+.topHeaderBtn {
+    border: 1px solid #2962ff;
+    border-radius: 15px;
+    background: #2962ff;
+    font-size: 1.5rem;
+    color: white;
+    outline: none;
+    transition: .2s ease-in-out;
+    &:hover {
+        background: #42a5f5 ;
+    }
+}
