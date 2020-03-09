@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        const person = {
+            name: 'Ivan',
+            sayHi: function (phone, email) {
+                console.log(`Hi, Mr ${this.name}. Your phone: ${phone}, email: ${email}`);
+            }
+        }
+
+        Function.prototype.bind1 = function(context, ...rest) {
+            const func = this;
+            return function (...args) {
+                const uniqId = Symbol();
+                context[uniqId] = func;
+                const rezult = context[uniqId](...rest, ...args)
+                delete context[uniqId];
+                return rezult
+            }
+        }
+
+        Function.prototype.bind2 = function(context, ...rest) {
+            const func = this; 
+            return function(...args) {
+                return func.apply(context, [...rest, ...args])   
+            }                                
+        }
+
+        const sayHello1 = person.sayHi.bind1(person, '111-22-33');
+        sayHello1('someone@i.ua')
+        const sayHello2 = person.sayHi.bind2(person, '111-22-33');
+        sayHello2('someone@i.ua')
+    </script>
+</body>
+
+</html>
