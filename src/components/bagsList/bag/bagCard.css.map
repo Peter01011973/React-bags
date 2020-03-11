@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;CAYtB;;AAXI,AAAD,gBAAS,CAAC;EACN,KAAK,EAAE,GAAG;CACb;;AACA,AAAD,cAAO,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CAKzB;;AAJI,AAAD,qBAAQ,EAAG,wBAAU,CAAC;EAClB,UAAU,EAAE,IAAI;EAChB,cAAc,EAAE,IAAI;CACvB",
+    "sources": [
+        "bagCard.scss"
+    ],
+    "names": [],
+    "file": "bagCard.css"
+}

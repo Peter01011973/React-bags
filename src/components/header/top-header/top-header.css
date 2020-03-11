@@ -42,7 +42,7 @@
 }
 
 .topHeader__cart button {
-  padding: 7px 50px;
+  padding: 9px 80px;
 }
 
 .topHeaderBtn {
@@ -58,5 +58,8 @@
 
 .topHeaderBtn:hover {
   background: #42a5f5;
+  border: 1px solid #42a5f5;
+  cursor: pointer;
+  color: #ffd600;
 }
 /*# sourceMappingURL=top-header.css.map */

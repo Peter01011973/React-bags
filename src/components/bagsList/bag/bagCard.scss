@@ -1,0 +1,15 @@
+.bagCard {
+    display: flex;
+    flex-direction: row;
+    &__images {
+        width: 40%;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        &__title, &__subtitle {
+            text-align: left;
+            padding-bottom: 1rem;
+        }
+    }
+}
