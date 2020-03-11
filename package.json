@@ -18,6 +18,8 @@
     "immer": "^6.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-image-magnifier-lens": "^1.1.9",
+    "react-image-magnifiers": "^1.2.3",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BagI } from '../../../interfaces';
 import './bagCard.css';
+import numberWithThousands from '../../utils/numberWithThousandsSeparators';
 
 interface Props {
     bag: BagI
@@ -21,7 +22,7 @@ const Bag: React.FC<Props> = ({bag}) => {
                 <h3 className = 'bagCard__info__subtitle'>color: {color}</h3>
                 <h3 className = 'bagCard__info__subtitle'>dimensions: {dimensions}</h3>
                 <h3 className = 'bagCard__info__subtitle'>material: {material}</h3>
-                <h1 className = 'bagCard__info__price'>price: {price}</h1>
+                <h1 className = 'bagCard__info__price'>price: {numberWithThousands(price)} grn</h1>
             </div>
         </div>
     )
