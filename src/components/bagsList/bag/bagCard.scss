@@ -1,15 +1,56 @@
+@import '../../../global.scss';
 .bagCard {
     display: flex;
     flex-direction: row;
+    border: 1px solid silver;
+    width: 600px;
+    margin: 0.5rem;
+    padding: 0.5rem;     
     &__images {
-        width: 40%;
+        width: 380px;
+        &__image {
+            max-width: 380px;
+            max-height: 240px;
+        }
+    &:hover {
+        cursor: pointer;
+    }
     }
     &__info {
         display: flex;
         flex-direction: column;
-        &__title, &__subtitle {
-            text-align: left;
-            padding-bottom: 1rem;
+        text-align: left;
+        width: 250px;
+        &__title {
+            padding-bottom: 0.4rem;
+            display: block;
+            height: 2.5rem;
+        }
+        &__subtitle {
+            color: gray;
+        }
+        &__price {
+            padding: 0.5rem 0;
+        }
+        &__btn {
+            padding: 5px 0;
+            background: $navMenuBackground;
+            border: 1px solid $navMenuBackground;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            width: 200px;
+            &:hover {
+                background: #42a5f5 ;
+                border: 1px solid #42a5f5;
+                cursor: pointer;
+                color: $navMenuSelectItemFontColor;                
+            }
+            &:disabled {
+                background: #42a5f5 ;
+                border: 1px solid #42a5f5;
+                cursor: not-allowed;
+            }
         }
     }
 }

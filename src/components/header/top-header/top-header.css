@@ -16,7 +16,7 @@
 }
 
 .topHeader__logo {
-  width: 25%;
+  width: 20%;
 }
 
 .topHeader__search {
@@ -38,11 +38,13 @@
 }
 
 .topHeader__cart {
-  width: 15%;
+  width: 20%;
 }
 
 .topHeader__cart button {
-  padding: 9px 80px;
+  display: block;
+  width: 300px;
+  padding: 9px 0;
 }
 
 .topHeaderBtn {
@@ -54,6 +56,10 @@
   outline: none;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
+}
+
+.topHeaderBtn .signInBtn {
+  font-size: 1rem;
 }
 
 .topHeaderBtn:hover {

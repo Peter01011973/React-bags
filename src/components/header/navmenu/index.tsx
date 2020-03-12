@@ -11,7 +11,7 @@ const Navmenu: React.FC<Props> = () => {
         <div className='navmenu'>
             <ul className='navmenu__list'>
                 <li className='navmenu__item'><NavLink to='/bags' activeClassName='active' className='navmenu__link'>bags</NavLink></li>
-                <li className='navmenu__item'><NavLink to='/walets' activeClassName='active' className='navmenu__link'>wallets</NavLink></li>
+                <li className='navmenu__item'><NavLink to='/wallets' activeClassName='active' className='navmenu__link'>wallets</NavLink></li>
                 <li className='navmenu__item'><NavLink to='/contacts' activeClassName='active' className='navmenu__link'>contacts</NavLink></li>
                 <li className='navmenu__item'><NavLink to='/comments' activeClassName='active' className='navmenu__link'>comments</NavLink> </li>
             </ul>

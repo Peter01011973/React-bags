@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;   
     &__logo {
-        width: 25%;
+        width: 20%;
     }
     &__search {
         width: 30%;
@@ -25,9 +25,11 @@
         }
     }
     &__cart {
-        width: 15%;
+        width: 20%;
         button {
-            padding: 9px 80px;
+            display: block;
+            width: 300px;
+            padding: 9px 0;
 
         }
     }
@@ -41,6 +43,9 @@
     color: white;
     outline: none;
     transition: .2s ease-in-out;
+    .signInBtn {
+        font-size: 1rem;
+    }
     &:hover {
         background: #42a5f5 ;
         border: 1px solid #42a5f5;

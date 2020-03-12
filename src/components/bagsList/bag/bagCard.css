@@ -6,10 +6,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border: 1px solid silver;
+  width: 600px;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 .bagCard__images {
-  width: 40%;
+  width: 380px;
+}
+
+.bagCard__images__image {
+  max-width: 380px;
+  max-height: 240px;
+}
+
+.bagCard__images:hover {
+  cursor: pointer;
 }
 
 .bagCard__info {
@@ -20,10 +33,44 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: left;
+  width: 250px;
 }
 
-.bagCard__info__title, .bagCard__info__subtitle {
-  text-align: left;
-  padding-bottom: 1rem;
+.bagCard__info__title {
+  padding-bottom: 0.4rem;
+  display: block;
+  height: 2.5rem;
+}
+
+.bagCard__info__subtitle {
+  color: gray;
+}
+
+.bagCard__info__price {
+  padding: 0.5rem 0;
+}
+
+.bagCard__info__btn {
+  padding: 5px 0;
+  background: #2962ff;
+  border: 1px solid #2962ff;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  width: 200px;
+}
+
+.bagCard__info__btn:hover {
+  background: #42a5f5;
+  border: 1px solid #42a5f5;
+  cursor: pointer;
+  color: #ffd600;
+}
+
+.bagCard__info__btn:disabled {
+  background: #42a5f5;
+  border: 1px solid #42a5f5;
+  cursor: not-allowed;
 }
 /*# sourceMappingURL=bagCard.css.map */
