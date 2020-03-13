@@ -1,5 +1,6 @@
 export interface BagI {
     id: number,
+    inCart?: number,
     category: string,
     name: string,
     vendor: string,

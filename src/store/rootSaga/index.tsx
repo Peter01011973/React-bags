@@ -4,11 +4,12 @@ import { getBags } from '../../services/bagsService';
 import { fetchPost, addBags, errorBags, changeBagsListTotalSize } from '../bags/actions';
 
 export function* fetchBagsAsync(action: any) {
+    const {currentPage, pageSize, bagsInCart} = action.payload;
     yield put(fetchPost())
-    const result = yield call(getBags.bind(null,action.payload));    
+    const result = yield call(getBags.bind(null,{currentPage, pageSize}));    
     const { response, success, message } = result;
     if (success) { 
-        yield put(addBags(response.data));
+        yield put(addBags({bags: response.data, cart: bagsInCart}));
         yield put(changeBagsListTotalSize(+response.headers['x-total-count'])); 
     }
     else { yield put(errorBags(message)) }

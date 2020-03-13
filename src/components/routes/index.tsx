@@ -6,6 +6,7 @@ import Contacts from '../../containers/contacts'
 import Comments from '../../containers/comments'
 import { Redirect } from 'react-router-dom'
 import Bag from '../../containers/bag'
+import Cart from '../../containers/cart'
 interface Props {  }
 
 const Routes: React.FC<Props> = () => {
@@ -17,6 +18,7 @@ const Routes: React.FC<Props> = () => {
                 <Route path='/bags/:id' component={Bag} />
                 <Route path='/wallets' component={Wallets} />
                 <Route path='/contacts' component={Contacts} />
+                <Route path = '/cart' component = {Cart} />
                 <Route path='/comments' component={Comments} />
                 <Route render={() => <h1>Page not found</h1>} />
             </Switch>

@@ -1,0 +1,129 @@
+.cartTable__image {
+    max-width: 70px;
+}
+.inCart {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  }
+  
+//   thead th, tfoot th {
+//     font-family: 'Rock Salt', cursive;
+//   }
+  
+//   th {
+//     letter-spacing: 2px;
+//   }
+  
+//   td {
+//     letter-spacing: 1px;
+//   }
+  
+//   tbody td {
+//     text-align: center;
+//   }
+  
+//   tfoot th {
+//     text-align: right;
+//   }
+
+//   table {
+//     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+//     font-size: 14px;
+
+//     border-spacing: 0;
+//     text-align: center;
+//     // border: 1px solid silver;
+//     border-radius: 10px;
+//     }
+//     th {
+//     background: #BCEBDD;
+//     color: white;
+//     text-shadow: 0 1px 1px #2D2020;
+//     padding: 10px 20px;
+//     }
+//     th, td {
+//     border-style: solid;
+//     border-width: 0 1px 1px 0;
+//     border-color: white;
+//     }
+//     th:first-child, td:first-child {
+//     text-align: left;
+//     }
+//     th:first-child {
+//     border-top-left-radius: 10px;
+//     }
+//     th:last-child {
+//     border-top-right-radius: 10px;
+//     border-right: none;
+//     }
+//     td {
+//     padding: 10px 20px;
+//     // border-radius: 10px;
+//     border: 1px solid silver;
+//     // background: #F8E391;
+//     }
+//     tr:last-child td:first-child {
+//     border-radius: 10px;
+//     }
+
+//     // tr td:last-child {
+//     // border-right: none;
+//     // }
+
+//     .table-row:hover {
+//       td {background: yellow;}
+        
+//     }
+.table {
+    margin-top: 2rem;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-size: 1.5rem;
+        .plus {
+            color: #76ff03;
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+        .minus {
+            color: red;
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+        .delete {
+            color: #9c27b0;
+            cursor: pointer;
+        }
+    }
+    tr:nth-child(even){background-color: #f2f2f2;}
+    // tr:hover {background-color: #ddd;}
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+    }
+    tfoot {
+        font-weight: bold;
+        background: #a5d6a7;
+    } 
+}
+// .btn {
+//     border: none;
+
+//     background: transparent;
+// }

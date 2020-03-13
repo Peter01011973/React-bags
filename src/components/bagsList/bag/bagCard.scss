@@ -5,7 +5,22 @@
     border: 1px solid silver;
     width: 600px;
     margin: 0.5rem;
-    padding: 0.5rem;     
+    padding: 0.5rem;  
+    position: relative;
+    overflow: hidden; 
+    .incart-overlay {
+        width: 100px;
+        height: 80px;
+        background: #f00;
+        font-weight: bold;
+        color: yellow;
+        text-align: center;
+        line-height: 130px;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: -35px;
+        left: -45px;
+    }  
     &__images {
         width: 380px;
         &__image {
@@ -54,3 +69,4 @@
         }
     }
 }
+

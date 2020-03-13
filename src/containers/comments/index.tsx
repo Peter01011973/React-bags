@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageMagnifierLens from "react-image-magnifier-lens";
+// import ImageMagnifierLens from "react-image-magnifier-lens";
 interface Props {
     
 }

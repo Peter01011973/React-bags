@@ -11,7 +11,16 @@ const cartReducer = produce((draft: cartInitStateI = initialState, action: any) 
     switch (type) {
         // case FETCH_POST: return {...draft, isLoading: true};
         // case ADD_POSTS: return {...draft, posts: [...payload], isLoading: false};
-        case ADD_TO_CART: return {...draft, bags: [...draft.bags, payload]};
+        case ADD_TO_CART:
+            const newObj = { ...payload };
+            const index = draft.bags.findIndex(item => payload.id === item.id);
+            if (index === -1) {
+                newObj.inCart = 1;
+                return { ...draft, bags: [...draft.bags, newObj] };
+            } else {
+                draft.bags[index].inCart = draft.bags[index].inCart as number + 1;
+                return draft
+            } 
         // case DELETE_POST: return {...draft, posts: draft.posts.filter(post =>(post.id !== payload)), isLoading: false};
         // case UPDATE_POST: return {...draft, posts: draft.posts.map(post =>(post.id === payload.id ? payload : post)), isLoading: false};
         // case ERROR_POST: return {...draft, error: payload};
