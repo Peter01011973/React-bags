@@ -2,6 +2,7 @@ import React from 'react';
 import { BagI } from '../../../interfaces';
 import './bagCard.css';
 import numberWithThousands from '../../utils/numberWithThousandsSeparators';
+import BagSlider from './bagSlider';
 
 interface Props {
     bag: BagI,
@@ -10,13 +11,13 @@ interface Props {
 }
 
 const BagCard: React.FC<Props> = ({bag, addToCart, bagInfo}) => {
-    const {name, photo1, category, vendor, brand, countryManufacture, color, dimensions, material, price, quantity, inCart = 0} = bag;
+    const {name, photo1, photo2, category, vendor, brand, countryManufacture, color, dimensions, material, price, quantity, inCart = 0} = bag;
     return (
         <div className = 'bagCard' >
             {inCart ? <div className = 'incart-overlay'>in cart</div> : null}
             <div className='bagCard__images' onClick={bagInfo.bind(null, bag.id)}>
 
-                <img className = 'bagCard__images__image' src = {process.env.PUBLIC_URL + photo1.photoTI} alt = 'a bag looks awesome' /> 
+                <BagSlider image1={photo1} image2 = {photo2}/>
             </div>
             <div className = 'bagCard__info'>
                 <h3 className = 'bagCard__info__title'>{category}: {name}</h3>

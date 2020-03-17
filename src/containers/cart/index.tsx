@@ -5,21 +5,23 @@ import { getBagsFromCart, numberItemsInCart, ammountInCart } from '../../store/b
 import { BagI } from '../../interfaces';
 import './cart.css';
 import numberWithThousands from '../../components/utils/numberWithThousandsSeparators';
-import { addBagToCart } from '../../store/bagsCart/actions';
+import { addBagToCart, removeBagFromCart } from '../../store/bagsCart/actions';
+import { selectBags } from '../../store/bags/selectors';
 
 interface Props {
     cart: BagI[],
     itemsInCart: number,
-    sumInCart: number
+    sumInCart: number,
+    bags: BagI[]
 }
 
-const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart }) => {
+const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart, bags }) => {
     const dispatch = useDispatch();
-
-    const addToCartHandler = (bad: BagI) => {
-        dispatch(addBagToCart(bad))
+    
+    const addToCartHandler = (bag: BagI) => {
+        dispatch(addBagToCart(bag))
     }
-    const removeFromCartHandler = (bag: BagI) => console.log(bag.id);
+    const removeFromCartHandler = (bag: BagI) => dispatch(removeBagFromCart(bag))
 
     const cartTable = (
         <table className='table'>
@@ -36,7 +38,11 @@ const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart }) => {
             </thead>
             <tbody>
                 {cart.map((bag: BagI, index) => {
-                    const { id, photo1, name, inCart, price } = bag;
+                    const { id, photo1, name, inCart, price, quantity} = bag;
+                    const plusBtnDisable: boolean = ((quantity - (inCart as number)) === 0);
+                    const minusBtnDisable: boolean = ((inCart as number) === 0);
+                    const plusBtnClass = plusBtnDisable ? "fa fa-plus-circle plusDisable" : "fa fa-plus-circle plus";
+                    const minusBtnClass = minusBtnDisable ? "fa fa-minus-circle minusDisable" : "fa fa-minus-circle minus";
                     return (
                         <tr key={id}>
                             <td>{index + 1}</td>
@@ -44,9 +50,9 @@ const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart }) => {
                             <td>{name}</td>
                             <td>{numberWithThousands(price)}</td>
                             <td>
-                                <i className="fa fa-plus-circle plus" onClick={() => addToCartHandler(bag)} ></i>
+                                <i className={plusBtnClass} onClick={() => {if (!plusBtnDisable) return addToCartHandler(bag)}} ></i>
                                     {inCart}
-                                <i className="fa fa-minus-circle minus" onClick={()=>removeFromCartHandler(bag)}></i>
+                                <i className={minusBtnClass} onClick={()=>removeFromCartHandler(bag)}></i>
                             </td>
                             <td>{numberWithThousands(price * (inCart as number))}</td>
                             <td><i className="fa fa-trash delete"></i></td>
