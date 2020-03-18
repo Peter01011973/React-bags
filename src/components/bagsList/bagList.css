@@ -19,7 +19,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 30%;
+  width: 26%;
 }
 
 .bagsContainer__list {
@@ -32,6 +32,6 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 70%;
+  width: 74%;
 }
 /*# sourceMappingURL=bagList.css.map */
