@@ -98,6 +98,16 @@
             margin-right: 0.5rem;
             cursor: pointer;
         }
+        .plusDisable, .minusDisable {
+            color: gray;
+            margin-right: 0.5rem;
+            cursor: not-allowed;            
+        }
+        .minusDisable {
+            color: gray;
+            margin-left: 0.5rem;
+            cursor: not-allowed;            
+        }
         .minus {
             color: red;
             margin-left: 0.5rem;
