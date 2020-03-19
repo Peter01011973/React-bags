@@ -39,15 +39,9 @@ html {
   cursor: pointer;
 }
 
-.table td .plusDisable, .table td .minusDisable, .table th .plusDisable, .table th .minusDisable {
+.table td .btnDisable, .table th .btnDisable {
   color: gray;
   margin-right: 0.5rem;
-  cursor: not-allowed;
-}
-
-.table td .minusDisable, .table th .minusDisable {
-  color: gray;
-  margin-left: 0.5rem;
   cursor: not-allowed;
 }
 

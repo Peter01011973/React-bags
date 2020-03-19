@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import bagsReducer from './bags/reducer';
 import cartReducer from './bagsCart/reducer';
 import rootSaga from './rootSaga';
+import filterReducer from './bagsFilters/reducer';
 
 const rootReducer = combineReducers({
     bags: bagsReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    filters: filterReducer
 });
 
 export const sagaMiddleware = createSagaMiddleware();

@@ -20,6 +20,7 @@
     "axios": "^0.19.2",
     "immer": "^6.0.1",
     "react": "^16.13.0",
+    "react-compound-slider": "^2.5.0",
     "react-dom": "^16.13.0",
     "react-image-magnifier-lens": "^1.1.9",
     "react-image-magnifiers": "^1.2.3",

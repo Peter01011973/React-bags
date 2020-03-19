@@ -2,6 +2,7 @@ import React from 'react';
 import { BagI } from '../../interfaces';
 import Bag from './bag';
 import './bagList.css';
+import Filters from '../filters';
 interface Props {
     bags: BagI[],
     isLoading: boolean,
@@ -28,7 +29,7 @@ const BagsList: React.FC<Props> = ({bags, isLoading, isError, pageSize, currentP
     return (
         <div className='bagsContainer'>
             <div className='bagsContainer__filters'>
-                Filters
+                <Filters />
             </div>
             <div className='bagsContainer__list'>
                 {renderBags}

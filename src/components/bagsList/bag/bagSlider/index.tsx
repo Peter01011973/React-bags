@@ -19,7 +19,6 @@ const BagSlider: React.FC<Props> = ({image1, image2}) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        dots: true,
         autoplay: true,
         autoplaySpeed: 5000,
         className: 'bagCard__slider',

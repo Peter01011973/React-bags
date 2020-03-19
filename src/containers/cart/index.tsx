@@ -5,8 +5,9 @@ import { getBagsFromCart, numberItemsInCart, ammountInCart } from '../../store/b
 import { BagI } from '../../interfaces';
 import './cart.css';
 import numberWithThousands from '../../components/utils/numberWithThousandsSeparators';
-import { addBagToCart, removeBagFromCart } from '../../store/bagsCart/actions';
+import { addBagToCart, removeBagFromCart, deleteBagFromCart } from '../../store/bagsCart/actions';
 import { selectBags } from '../../store/bags/selectors';
+import IconBtn from '../../components/UI/iconBtn';
 
 interface Props {
     cart: BagI[],
@@ -18,10 +19,9 @@ interface Props {
 const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart, bags }) => {
     const dispatch = useDispatch();
     
-    const addToCartHandler = (bag: BagI) => {
-        dispatch(addBagToCart(bag))
-    }
+    const addToCartHandler = (bag: BagI) => dispatch(addBagToCart(bag))
     const removeFromCartHandler = (bag: BagI) => dispatch(removeBagFromCart(bag))
+    const deleteFromCartHandler = (bag: BagI) => dispatch(deleteBagFromCart(bag))
 
     const cartTable = (
         <table className='table'>
@@ -39,10 +39,7 @@ const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart, bags }) => {
             <tbody>
                 {cart.map((bag: BagI, index) => {
                     const { id, photo1, name, inCart, price, quantity} = bag;
-                    const plusBtnDisable: boolean = ((quantity - (inCart as number)) === 0);
-                    const minusBtnDisable: boolean = ((inCart as number) === 0);
-                    const plusBtnClass = plusBtnDisable ? "fa fa-plus-circle plusDisable" : "fa fa-plus-circle plus";
-                    const minusBtnClass = minusBtnDisable ? "fa fa-minus-circle minusDisable" : "fa fa-minus-circle minus";
+
                     return (
                         <tr key={id}>
                             <td>{index + 1}</td>
@@ -50,12 +47,20 @@ const Cart: React.FC<Props> = ({ cart, sumInCart, itemsInCart, bags }) => {
                             <td>{name}</td>
                             <td>{numberWithThousands(price)}</td>
                             <td>
-                                <i className={plusBtnClass} onClick={() => {if (!plusBtnDisable) return addToCartHandler(bag)}} ></i>
+                                <IconBtn 
+                                    iconType='plus' 
+                                    disabled={((quantity - (inCart as number)) === 0)} 
+                                    onClickHandler = {addToCartHandler.bind(null, bag)}
+                                />
                                     {inCart}
-                                <i className={minusBtnClass} onClick={()=>removeFromCartHandler(bag)}></i>
+                                <IconBtn 
+                                    iconType='minus' 
+                                    disabled={((inCart as number) === 0)} 
+                                    onClickHandler = {removeFromCartHandler.bind(null, bag)}
+                                />
                             </td>
                             <td>{numberWithThousands(price * (inCart as number))}</td>
-                            <td><i className="fa fa-trash delete"></i></td>
+                            <td><i className="fa fa-trash delete" onClick={() => deleteFromCartHandler(bag)}></i></td>
                         </tr>
                     )
                 })}
