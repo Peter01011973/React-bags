@@ -26,6 +26,7 @@ const BagsList: React.FC<Props> = ({bags, isLoading, isError, pageSize, currentP
             )} 
         </>
     )
+    if (isLoading) return <p>Loading...</p>
     return (
         <div className='bagsContainer'>
             <div className='bagsContainer__filters'>

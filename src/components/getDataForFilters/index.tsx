@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFiltersSaga } from '../../store/bagsFilters/actions';
 
 interface Props {
@@ -7,11 +7,12 @@ interface Props {
 }
 
 const GetDataForFilters = (props: Props) => {
+    // const isLoading = useSelector();
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log('filters');
         dispatch(addFiltersSaga());        
-    }, [])  
+    }, []) 
+    // if () 
     return null
 }
 

@@ -91,7 +91,7 @@ const PriceSlider: React.FC<Props> = (props: Props) => {
 
 const mapStateToProps = (state: RootState) => {
     return {
-        pricesMM : 
+        // pricesMM : 
     }
 }
 

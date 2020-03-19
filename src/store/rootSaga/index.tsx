@@ -21,7 +21,6 @@ export function* fetchBagsAsync(action: any) {
 }
 
 export function* fetchBagsAndPrepareFiltersAsync() {
-    yield put(fetchPost())
     const result = yield call(getBagsForFilters);    
     const { response, success, message } = result;
     if (success) {
@@ -43,7 +42,7 @@ export function* fetchBagsAndPrepareFiltersAsync() {
           }  
         ); 
         prices = prices.sort((prev, next) => prev - next); 
-        yield put(addFilters({pricesMM: {min, max}, brands, colors, prices}));
+        yield put(addFilters({pricesMM: {min, max}, brands, colors, prices, isLoading: false}));
         brandsSet.clear(); colorSet.clear(); pricesSet.clear();        
     }
     else { yield put(errorBags(message)) }

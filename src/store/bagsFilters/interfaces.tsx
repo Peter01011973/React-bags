@@ -19,5 +19,6 @@ export interface FilterI{
     pricesMM: MinMaxPriceI,
     brands: BrandFilterI[],
     colors: ColorFilterI[],
-    prices: number[]
+    prices: number[],
+    isLoading: boolean
 }
