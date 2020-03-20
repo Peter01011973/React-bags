@@ -6,7 +6,6 @@ import { BagI } from '../../interfaces';
 import './cart.css';
 import numberWithThousands from '../../components/utils/numberWithThousandsSeparators';
 import { addBagToCart, removeBagFromCart, deleteBagFromCart } from '../../store/bagsCart/actions';
-import { selectBags } from '../../store/bags/selectors';
 import IconBtn from '../../components/UI/iconBtn';
 
 interface Props {

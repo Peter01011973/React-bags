@@ -3,10 +3,9 @@ import { ADD_BAGS_SAGA } from '../bags/types';
 import { getBags, getBagsForFilters } from '../../services/bagsService';
 import { fetchPost, addBags, errorBags, changeBagsListTotalSize } from '../bags/actions';
 import { ADD_FILTERS_SAGA } from '../bagsFilters/types';
-import bags from '../../containers/bags';
 import { BagI } from '../../interfaces';
 import { BrandFilterI, ColorFilterI } from '../bagsFilters/interfaces';
-import { addFilters } from '../bagsFilters/actions';
+import { addFilters, startAddingFilters } from '../bagsFilters/actions';
 
 export function* fetchBagsAsync(action: any) {
     const {currentPage, pageSize, bagsInCart} = action.payload;
@@ -21,17 +20,18 @@ export function* fetchBagsAsync(action: any) {
 }
 
 export function* fetchBagsAndPrepareFiltersAsync() {
+    yield put(startAddingFilters());
     const result = yield call(getBagsForFilters);    
     const { response, success, message } = result;
     if (success) {
         let max = -Infinity;
         let min = Infinity; 
-        const brandsSet = new Set;
-        const pricesSet = new Set;
+        const brandsSet = new Set();
+        const pricesSet = new Set();
         const brands: BrandFilterI[] = [];
         const colors: ColorFilterI[] = [];
         let prices: number[] = [];
-        const colorSet = new Set;
+        const colorSet = new Set();
         (response.data as BagI[]).forEach((bag: BagI) =>{
             const {color, brand, price} = bag;
             if (!brandsSet.has(brand)) {brandsSet.add(brand); brands.push({brand, filter: false})}

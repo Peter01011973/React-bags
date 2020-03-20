@@ -6,12 +6,14 @@ import GetDataForFilters from './components/getDataForFilters';
 
 function App() {
   return (
-    <Layout>
-      <div className="App">
-        <GetDataForFilters />
-        <Routes/>
-      </div>
-    </Layout>
+    <>
+      <GetDataForFilters />
+      <Layout>
+        <div className="App">
+          <Routes />
+        </div>
+      </Layout>
+    </>
   );
 }
 

@@ -7,12 +7,13 @@
     &__filters {
         display: flex;
         flex-direction: column;
-        width: 26%;
+        width: 30%;
+        // padding: 0 20px;
     }
     &__list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 74%;   
+        width: 70%;   
     }
 }

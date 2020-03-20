@@ -1,9 +1,9 @@
 import {produce} from 'immer';
 import { FilterI } from './interfaces';
-import { ADD_FILTERS } from './types';
+import { ADD_FILTERS, START_ADDING_FILTER } from './types';
 
 const initialState: FilterI = {
-    pricesMM: {min: -Infinity, max: Infinity, minSet: -Infinity, maxSet: Infinity},
+    pricesMM: {min: 0, max: 15000, minSet: -Infinity, maxSet: Infinity},
     brands: [],
     colors: [],
     prices: [],
@@ -13,7 +13,8 @@ const initialState: FilterI = {
 const filterReducer = produce((draft: FilterI = initialState, action: any) => {
     const {type, payload} = action; 
     switch (type) {
-        case ADD_FILTERS: return {...payload}
+        case ADD_FILTERS: return {...payload};
+        case START_ADDING_FILTER: return {...draft, isLoading: true}
         default: return draft;
     }
 })
