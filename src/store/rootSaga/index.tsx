@@ -42,7 +42,7 @@ export function* fetchBagsAndPrepareFiltersAsync() {
           }  
         ); 
         prices = prices.sort((prev, next) => prev - next); 
-        yield put(addFilters({pricesMM: {min, max}, brands, colors, prices, isLoading: false}));
+        yield put(addFilters({pricesMM: {min, max, minSet: min, maxSet: max}, brands, colors, prices, isLoading: false}));
         brandsSet.clear(); colorSet.clear(); pricesSet.clear();        
     }
     else { yield put(errorBags(message)) }

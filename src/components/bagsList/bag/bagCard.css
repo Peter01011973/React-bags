@@ -7,7 +7,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   border: 1px solid silver;
-  width: 500px;
+  width: 45%;
   margin: 0.5rem;
   padding: 0.5rem;
   position: relative;
@@ -31,7 +31,7 @@
 }
 
 .bagCard__images {
-  width: 300px;
+  width: 62%;
 }
 
 .bagCard__images__image {
@@ -52,7 +52,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: left;
-  width: 200px;
+  width: 38%;
 }
 
 .bagCard__info__title {
@@ -76,7 +76,7 @@
   border-radius: 5px;
   font-weight: bold;
   color: white;
-  width: 200px;
+  width: 100%;
 }
 
 .bagCard__info__btn:hover {

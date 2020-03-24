@@ -13,8 +13,7 @@ const GetDataForFilters = (props: Props) => {
     useEffect(() => {
         dispatch(addFiltersSaga());        
     }, [dispatch]) 
-    if (isLoading) {console.log('JJJ');
-     return <p>Loading...</p>; }
+    if (isLoading) return <p>Loading...</p>; 
     return null
 }
 
