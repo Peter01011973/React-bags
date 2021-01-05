@@ -19,7 +19,7 @@
     "@types/redux-devtools": "^3.0.47",
     "@types/redux-saga": "^0.10.5",
     "@types/slick-carousel": "^1.6.34",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "immer": "^6.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
